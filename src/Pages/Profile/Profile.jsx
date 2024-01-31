@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 
 const Profile = () => {
-  return (
-    <div>Profile</div>
-  )
-}
+  const [count, setCount] = useState(0);
 
-export default Profile
+  useEffect(() => {
+    console.log(`Count changed: ${count}`);
+
+  }, [count]); 
+
+  const incrementCount = () => {
+    setCount(prevCount => prevCount + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={incrementCount}>Increment</button>
+    </div>
+  );
+};
+
+export default Profile;
