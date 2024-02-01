@@ -43,16 +43,6 @@ const Home = () => {
     setVisible(false);
   }
 
-  useEffect(() => {
-    
-      axios
-      .get("https://northwind.vercel.app/api/products/")
-
-      .then((res) => {
-        setData(res.data);
-      });
-      
-  }, [data]);
 
   return (
     <div className={styles.container}>
